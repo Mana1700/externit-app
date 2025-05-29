@@ -1,7 +1,7 @@
 [build]
   command = """
-    wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.0-stable.tar.xz
-    tar xf flutter_linux_3.19.0-stable.tar.xz
+    curl -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.16.9-stable.tar.xz -o flutter.tar.xz
+    tar xf flutter.tar.xz
     export PATH="$PATH:`pwd`/flutter/bin"
     flutter doctor
     flutter pub get
@@ -10,7 +10,7 @@
   publish = "build/web"
 
 [build.environment]
-  FLUTTER_VERSION = "3.19.0"
+  FLUTTER_VERSION = "3.16.9"
 
 [[plugins]]
   package = "netlify-plugin-flutter"
