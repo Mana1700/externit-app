@@ -4,7 +4,10 @@
     tar xf flutter_linux_3.19.0-stable.tar.xz
     export PATH="$PATH:`pwd`/flutter/bin"
     flutter doctor
-    flutter build web --release
+    rm -rf build
+    flutter clean
+    flutter pub get
+    flutter build web --release --base-href /
   """
   publish = "build/web"
 
