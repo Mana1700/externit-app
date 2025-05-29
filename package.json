@@ -1,0 +1,11 @@
+{
+  "name": "externit-info",
+  "version": "1.0.0",
+  "description": "ExternIT Info Web App",
+  "scripts": {
+    "build": "flutter build web --release --base-href /"
+  },
+  "devDependencies": {
+    "@netlify/plugin-flutter": "^1.0.0"
+  }
+} 
