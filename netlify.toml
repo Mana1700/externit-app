@@ -1,13 +1,18 @@
 [build]
-  command = "npm run build"
+  command = """
+    git clone https://github.com/flutter/flutter.git -b stable
+    export PATH="$PATH:`pwd`/flutter/bin"
+    flutter doctor
+    flutter pub get
+    flutter build web --release --base-href /
+  """
   publish = "build/web"
 
 [build.environment]
   FLUTTER_VERSION = "3.19.0"
-  NODE_VERSION = "18"
 
 [[plugins]]
-  package = "@netlify/plugin-flutter"
+  package = "netlify-plugin-flutter"
 
 [[redirects]]
   from = "/*"
