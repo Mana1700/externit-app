@@ -55,5 +55,17 @@
       });
     });
   </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+  </script>
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('Flutter initialization error:', e);
+    });
+  </script>
 </body>
 </html>
