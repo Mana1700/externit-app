@@ -1,6 +1,14 @@
 [build]
-  command = "curl -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.16.9-stable.tar.xz -o flutter.tar.xz && tar xf flutter.tar.xz && export PATH=\"$PATH:`pwd`/flutter/bin\" && flutter doctor && flutter pub get && flutter build web --release --base-href /"
-  publish = "/opt/build/repo/build/web"
+  command = """
+    curl -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.16.9-stable.tar.xz -o flutter.tar.xz
+    tar xf flutter.tar.xz
+    export PATH="$PATH:`pwd`/flutter/bin"
+    flutter doctor
+    flutter pub get
+    mkdir -p build/web
+    flutter build web --release --base-href /
+  """
+  publish = "build/web"
   publishOrigin = "config"
 
 [build.environment]
