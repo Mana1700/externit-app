@@ -70,13 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
 class _HomeContent extends StatelessWidget {
   const _HomeContent();
 
-  Future<void> _launchWebsite() async {
-    final uri = Uri.parse('https://www.externit.com');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,18 +126,6 @@ class _HomeContent extends StatelessWidget {
                 'ExternIT is a platform that connects students with companies for internships and professional development opportunities. We bridge the gap between academic learning and real-world experience.',
                 style: Theme.of(context).textTheme.bodyLarge,
                 textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 32),
-              ElevatedButton.icon(
-                onPressed: _launchWebsite,
-                icon: const Icon(Icons.language),
-                label: const Text('Visit Website'),
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                    vertical: 12,
-                  ),
-                ),
               ),
             ],
           ),
